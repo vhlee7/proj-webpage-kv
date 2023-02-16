@@ -6,12 +6,14 @@
 		
 		<section>
 		<h2>Overview</h2>
-		<p>[TODO]</p>
+		<p>We created a rasterizer that can draw images with different resolutions with supersampling, do hierarchical transforms, and texture mapping with antialiasing. We thought it was interesting that we can calculate what the color for a pixel should be based on its surrounding colors. We also thought it was interesting that rendering pictures requires so much memory since we need to store a larger version of the picture as a buffer. 
+		</p>
 		</section>
 
 		<section>
 		<h2>Task 1</h2>
-		<p>[TODO]</p>
+		<p>We rasterized the triangles by iterating through all the points in a bounding box that just encapsulates the triangle. We offset the point by 0.5 in both x and y to sample the middle of the point and check if that point was within the bounds of the triangle. If it was in the bounds of the triangle, we set it inside of the sample buffer. We found the bounding box by finding the max and min xy values that the triangle touches. We check the bounds of the triangle using the line equation test. Since we are only checking the points inside and on the bounding box, our algorithm is no worse than that.
+		</p>
 		</section>
 
 		<section>
@@ -26,7 +28,9 @@
 
 		<section>
 		<h2>Task 4</h2>
-		<p>[TODO]</p>
+		<p>We made the robot squeeze its head
+			<img src="robot_task3.png" alt="task3 robot">
+		</p>
 		</section>
 
 		<section>
