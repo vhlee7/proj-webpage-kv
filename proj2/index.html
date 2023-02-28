@@ -39,9 +39,9 @@
 
 <body>
 
-<h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2018</h1>
+<h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2023</h1>
 <h1 align="middle">Project 2: Mesh Edit</h1>
-<h2 align="middle">YOUR NAME</h2>
+<h2 align="middle">Vincent Lee, Kevin Xiong</h2>
 
 <br><br>
 
@@ -49,7 +49,7 @@
 
 <h2 align="middle">Overview</h2>
 <p>
-    YOUR RESPONSE GOES HERE
+    [TODO OVERVIEW]
 </p>
 <br>
 
@@ -58,12 +58,9 @@
 
 <h3 align="middle">Part 1: Bezier Curves with 1D de Casteljau Subdivision</h3>
 
-
-<b>
-  Briefly explain de Casteljau's algorithm and how you implemented it in order to evaluate Bezier curves.
-</b>
 <p>
-    YOUR RESPONSE GOES HERE
+    We used de Casteljau’s algorithm to evaluate Bezier curves. De Casteljau’s algorithm is where you linearly interpolate between the control points on a parameter t. You can keep doing this recursively and the lowest recursion level will be a single point that lies on the Bezier curve. If you keep feeding in different values of t (between 0 and 1), it will trace out the Bezier curve. We were able to implement this algorithm by iterating through a list of points and linearly interpolating adjacent points in the list. We then save the results in a list that we can use to run the algorithm again.
+
 </p>
 <br>
 
@@ -129,11 +126,9 @@
 
 
 <h3 align="middle">Part 2: Bezier Surfaces with Separable 1D de Casteljau</h3>
-<b>
-  Briefly explain how de Casteljau algorithm extends to Bezier surfaces and how you implemented it in order to evaluate Bezier surfaces.
-</b>
 <p>
-    YOUR RESPONSE GOES HERE
+    With surfaces, you can treat it as a list of list points that define a Bezier curve. To make de Casteljau’s algorithm work with surfaces, you will need two parameter values u and v. You will use u to run the algorithm on each list. This will result in a list of points which can be used to run the algorithm again with v to get a point that lies on the Bezier surface. To do this in code, we iterated through a 2d array. We ran de Casteljau’s algorithm on each row with parameter u and combined the results in a single list. We then ran the algorithm again with v to return a point on the Bezier surface.
+
 </p>
 <br>
 
@@ -151,11 +146,8 @@
 
 <h3 align="middle">Part 3: Area-Weighted Vertex Normals</h3>
 
-<b>
-  Briefly explain how you implemented the area-weighted vertex normals.
-</b>
 <p>
-    YOUR RESPONSE GOES HERE
+    To implement area weighted vertices, we use the loop traversal method shown in discussion. This was done by first getting the starting vertex. SInce each vertex points to a halfedge, we use the halfedge variable in Vertex to get the starting point. To get the next vertex, we get the vertex of the twin’s next() halfedge and repeat until we return to our starting vertex. During iteration, we keep track of variables curr and prev that point to the current vertex and the previous loop’s vertex. With the starting vertex, these are used to calculate the area of each triangle using the formula A = 0.5(a x b + b x c + c x a) where a, b, and c are the vectors between each vertex. Then, we find its norm and proceed with the process described in the spec. We have a variable retVal that tracks the sum of the weights, and at the end, we normalize and return it. In the images below, the top image is without weighted shading, and the bottom is with weighted shading. As shown, the bottom image has gradual shading on each of the planes of the object, giving it a smoother look.
 </p>
 <br>
 
@@ -170,11 +162,9 @@
 
 
 <h3 align="middle">Part 4: Edge Flip</h3>
-<b>
-  Briefly explain how you implemented the edge flip operation and describe any interesting implementation / debugging tricks you have used.
-</b>
 <p>
-    YOUR RESPONSE GOES HERE
+    Since there are many objects to keep track of, we started by creating a variable pointing to every halfedge, vertex, edge, and face associated with the two triangles. Then, we reassigned the variables according to the first image below. For example, for h1, we would have h1->setNeighbors(h2, h7, v2, e2, f0). We did this for every object involved even for assignments that do not change, ensuring that no object is forgotten. The second and third images show before and after edge flip.
+
 </p>
 <br>
 
