@@ -64,50 +64,41 @@
 </p>
 <br>
 
-
-<b>
-  Take a look at the provided .bzc files and create your own Bezier curve with 6 control points of your choosing. Use this Bezier curve for your screenshots below.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
 <!-- Example of including a single figure -->
 <div align="middle">
-  <img src="images/your_file.png" align="middle" width="50%">
+  <img src="images/bezier_curve.png" align="middle" width="50%">
+  <figcaption>Bezier Curve with 6 control points</figcaption>
 </div>
 <br>
 
-<b>
-  Show screenshots of each step / level of the evaluation from the original control points down to the final evaluated point. Press <kbd>E</kbd> to step through. Toggle <kbd>C</kbd> to show the completed Bezier curve as well.
-</b>
 <!-- Example of including multiple figures -->
 <div align="middle">
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/bezier_curve_s1.png" align="middle" width="400px"/>
         <figcaption>Level 0</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/bezier_curve_s2.png" align="middle" width="400px"/>
         <figcaption>Level 1</figcaption>
       </td>
     </tr>
     <br>
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/bezier_curve_s3.png" align="middle" width="400px"/>
         <figcaption>Level 2</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/bezier_curve_s4.png" align="middle" width="400px"/>
         <figcaption>Level 3</figcaption>
       </td>
     </tr>
     <br>
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/bezier_curve_s5.png" align="middle" width="400px"/>
         <figcaption>Level 4</figcaption>
       </td>
     </tr>
@@ -115,14 +106,11 @@
 </div>
 <br>
 
-
-<b>
-  Show a screenshot of a slightly different Bezier curve by moving the original control points around and modifying the parameter \(t\) via mouse scrolling.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>  
-<br>
+<div align="middle">
+	<img src="images/bezier_curve_moved.png" align="middle" width="50%">
+	<figcaption>Moved control points and modified \(t\) </figcaption>
+  </div>
+  <br>
 
 
 <h3 align="middle">Part 2: Bezier Surfaces with Separable 1D de Casteljau</h3>
@@ -133,13 +121,11 @@
 <br>
 
 
-<b>
-  Show a screenshot of bez/teapot.bez (not .dae) evaluated by your implementation.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
+<div align="middle">
+	<img src="images/bezier_teapot.png" align="middle" width="50%">
+	<figcaption>Teapot made with Bezier surface </figcaption>
+  </div>
+  <br>
 
 
 <h2 align="middle">Section II: Triangle Meshes and Half-Edge Data Structure</h2>
@@ -152,13 +138,22 @@
 <br>
 
 
-<b>
-  Show screenshots of dae/teapot.dae (not .bez) comparing teapot shading with and without vertex normals. Use <kbd>Q</kbd> to toggle default flat shading and Phong shading.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
+<div align="middle">
+	<table style="width:100%">
+	  <tr align="center">
+		<td>
+		  <img src="images/teapot_default_shading.png" align="middle" width="400px"/>
+		  <figcaption>Teapot shading without vertex normals</figcaption>
+		</td>
+		<td>
+		  <img src="images/teapot_phong_shading.png" align="middle" width="400px"/>
+		  <figcaption>Teapot shading with vertex normals</figcaption>
+		</td>
+	  </tr>
+	  <br>
+	</table>
+  </div>
+  <br>
 
 
 <h3 align="middle">Part 4: Edge Flip</h3>
@@ -168,134 +163,77 @@
 </p>
 <br>
 
-
-<b>
-  Show screenshots of the teapot before and after some edge flips.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
-
-
-<b>
-    Write about your eventful debugging journey, if you have experienced one.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
+<div align="middle">
+	<table style="width:100%">
+	  <tr align="center">
+		<td>
+		  <img src="images/bean.png" align="middle" width="400px"/>
+		  <figcaption>bean.</figcaption>
+		</td>
+		<td>
+		  <img src="images/bean_edge_flip.png" align="middle" width="400px"/>
+		  <figcaption>bean with edge flips down the middle</figcaption>
+		</td>
+	  </tr>
+	  <br>
+	</table>
+  </div>
+  <br>
 
 
 <h3 align="middle">Part 5: Edge Split</h3>
-<b>
-  Briefly explain how you implemented the edge split operation and describe any interesting implementation / debugging tricks you have used.
-</b>
 <p>
-    YOUR RESPONSE GOES HERE
+    Similar to task 4, we first created variables assigned to every object associated with the two objects. Then, we create a new vertex, three new edges, and 2 new faces. Then, we assign our current and new elements as shown in the image below. 
+	Before returning the new vertex, we calculated the new position of the vertex. We needed to ensure that it was inside the triangles, so we took the average of the four surrounding vertices to get a midpoint for the new vertex.
 </p>
 <br>
 
+<div align="middle">
+	<img src="images/bean.png" align="middle" width="40%">
+	<figcaption>bean. </figcaption>
+  </div>
+  <br>
 
-<b>
-    Show screenshots of a mesh before and after some edge splits. 
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
-
-
-<b>
-    Show screenshots of a mesh before and after a combination of both edge splits and edge flips.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
-
-
-<b>
-    Write about your eventful debugging journey, if you have experienced one.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
-
-
-<b>
-    If you have implemented support for boundary edges, show screenshots of your implementation properly handling split operations on boundary edges.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
-
+<div align="middle">
+	<table style="width:100%">
+	  <tr align="center">
+		<td>
+		  <img src="images/bean_edge_split.png" align="middle" width="400px"/>
+		  <figcaption>bean with edge splits down the middle</figcaption>
+		</td>
+		<td>
+		  <img src="images/bean_edge_flip_split.png" align="middle" width="400px"/>
+		  <figcaption>bean with edge splits and flips</figcaption>
+		</td>
+	  </tr>
+	  <br>
+	</table>
+  </div>
+  <br>
 
 <h3 align="middle">Part 6: Loop Subdivision for Mesh Upsampling</h3>
-<b>
-  Briefly explain how you implemented the loop subdivision and describe any interesting implementation / debugging tricks you have used.
-</b>
+
 <p>
-    YOUR RESPONSE GOES HERE
+    Part 6 in prog
 </p>
 <br>
 
-
-<b>
-  Take some notes, as well as some screenshots, of your observations on how meshes behave after loop subdivision. What happens to sharp corners and edges? Can you reduce this effect by pre-splitting some edges?
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
-
-
-<b>
-  Load dae/cube.dae. Perform several iterations of loop subdivision on the cube. Notice that the cube becomes slightly asymmetric after repeated subdivisions. Can you pre-process the cube with edge flips and splits so that the cube subdivides symmetrically? Document these effects and explain why they occur. Also explain how your pre-processing helps alleviate the effects.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
-
-
-<b>
-    If you have implemented any extra credit extensions, explain what you did and document how they work with screenshots.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
-
-
-<h3 align="middle">Part 7 (Optional, Possible Extra Credit)</h3>
-<b>
-    Save your best polygon mesh as partsevenmodel.dae in your docs folder and show us a screenshot of the mesh in your write-up.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
-
-
-<b>
-    Include a series of screenshots showing your original mesh and your mesh after one and two rounds of subdivision. If you have used custom shaders, include screenshots of your mesh with those shaders applied as well.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
-
-
-<b>
-    Describe what you have done to enhance your mesh beyond the simple humanoid mesh described in the tutorial.
-</b>
-<p>
-    YOUR RESPONSE GOES HERE
-</p>
-<br>
+<div align="middle">
+	<table style="width:100%">
+	  <tr align="center">
+		<td>
+		  <img src="images/bean_side.png" align="middle" width="400px"/>
+		  <figcaption>bean with edge splits down the middle</figcaption>
+		</td>
+		<td>
+		  <img src="images/bean_side_up1.png" align="middle" width="400px"/>
+		  <figcaption>bean with edge splits and flips</figcaption>
+		</td>
+	  </tr>
+	  <br>
+	</table>
+  </div>
+  <br>
 
 
 </body>
