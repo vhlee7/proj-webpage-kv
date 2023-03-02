@@ -183,8 +183,12 @@
 
 <h3 align="middle">Part 5: Edge Split</h3>
 <p>
-    Similar to task 4, we first created variables assigned to every object associated with the two objects. Then, we create a new vertex, three new edges, and 2 new faces. Then, we assign our current and new elements as shown in the image below. 
+	Similar to task 4, we first created variables assigned to every object associated with the two mesh triangles. Then, we create a new vertex, three new edges, and 2 new faces. Then, we assign our current and new elements as shown in the image below on the right (blue highlights are the new objects). 
+
+</p>
+<p>
 	Before returning the new vertex, we calculated the new position of the vertex. We needed to ensure that it was inside the triangles, so we took the average of the four surrounding vertices to get a midpoint for the new vertex.
+
 </p>
 <br>
 
@@ -214,7 +218,12 @@
 <h3 align="middle">Part 6: Loop Subdivision for Mesh Upsampling</h3>
 
 <p>
-    [TODO]: writeup
+    We used the steps as outlined in the spec: for step one, we calculated all the updated positions of the original vertices by iterating through each of its original neighbors for the neighbor’s sum. After calculating the new position, we stored it in the variable newPosition. Afterwards, we looped through all the original edges and traversed its vertices to calculate the positions of the new vertices, which were then stored in each edge’s newPosition variable. In addition, each vertex and edge had their isNew variable set to false to indicate that they were part of the original mesh (since new ones are created with split). Next we iterated through all the edges and split them if they were an original edge. This will create two new edges and half of the original edge. To prevent half of an original edge from splitting again, we also checked if both of its vertices were also original. Splitting an edge will return the newly created vertex, so we set that vertex’s newPosition to the edge’s newPosition. Then, we flip all the new edges. We checked the isNew flag to make sure the split original edges do not get flipped. Then, we iterated through all of the vertices and edges to update their positions and reset their isNew flags for the next upsampling.
+</p>
+<p>
+    
+Observations: During upsampling, edges and corners round out since the faces they are connected to become further split, which creates new faces that can fold. By upsampling more, we eventually get a smooth curve at each corner and edge. Under Rounding Corners and Edges in the images below, we tried splitting edges on faces connected to the corner first before upsampling, but it still leads to smoother corners. Asymmetry occurs during upsampling because all the face edges are in a diagonal from top left to bottom right, so when the edges are split, we get asymmetrical edges. This can be solved by splitting these face edges, and the bottom 2 images (under Fixing Asymmetry) give symmetrical upsampling using this method.
+
 </p>
 <br>
 
