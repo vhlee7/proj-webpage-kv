@@ -1,7 +1,214 @@
-<html>
-	<head>
-	</head>
-	<body>
-		Project 3-2 here
-	</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>  
+    div.padded {  
+      padding-top: 0px;  
+      padding-right: 100px;  
+      padding-bottom: 0.25in;  
+      padding-left: 100px;  
+    }  
+  </style> 
+<title>Your Name  |  CS 184</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+<br />
+<h1 align="middle">Assignment 3-2: Additional Features to PathTracer</h1>
+    <h2 align="middle">Vincent Lee, Kevin Xiong</h2>
+    <h2 align="middle">(Webpage URL)</h2>
+
+    <div class="padded">
+
+        <h3 align="middle">Part 1. Mirror and Glass Materials</h3>
+
+        <p><b>
+            Rendering of `CBspheres.dae` at different max ray depths
+		<br>
+        <div align="middle">
+			<table style="width:100%">
+			  <tr align="center">
+				<td>
+				  <img src="images/sphere-ray-0.png" align="middle" width="400px"/>
+				  <figcaption>max_ray_depth = 0</figcaption>
+				</td>
+				<td>
+				  <img src="images/sphere-ray-1.png" align="middle" width="400px"/>
+				  <figcaption>max_ray_depth = 1</figcaption>
+				</td>
+			  </tr>
+			  <tr align="center">
+				<td>
+				  <img src="images/sphere-ray-2.png" align="middle" width="400px"/>
+				  <figcaption>max_ray_depth = 2</figcaption>
+				</td>
+				<td>
+				  <img src="images/sphere-ray-3.png" align="middle" width="400px"/>
+				  <figcaption>max_ray_depth = 3</figcaption>
+				</td>
+			  </tr>
+			  <tr align="center">
+				<td>
+				  <img src="images/sphere-ray-4.png" align="middle" width="400px"/>
+				  <figcaption>max_ray_depth = 4</figcaption>
+				</td>
+				<td>
+				  <img src="images/sphere-ray-5.png" align="middle" width="400px"/>
+				  <figcaption>max_ray_depth = 5</figcaption>
+				</td>
+			  </tr>
+			  <tr align="center">
+				<td>
+				  <img src="images/sphere-ray-100.png" align="middle" width="400px"/>
+				  <figcaption>max_ray_depth = 100</figcaption>
+				</td>
+			  </tr>
+			</table>
+		  </div>
+        <br>
+        <p>
+            [explain how the new multibounce effects that appear in each image]
+        </p>
+        <br>
+        <p>
+            Explain how these bounce numbers relate to the particular effects that appear. Make sure to include all screenshots.
+        </p>
+        <br>
+
+
+        <h3 align="middle">Part 2. Microfacet Material</h3>
+        <p><b>
+            Rendering of `CBdragon_microfacet_au.dae` rendered with differnt $\alpha$ 
+        </b></p>
+        
+		<div align="middle">
+			<table style="width:100%">
+				<tr align="center">
+				<td>
+					<img src="images/dragon-alpha-0.005.png" align="middle" width="400px"/>
+					<figcaption> $\alpha$ = 0.005</figcaption>
+				</td>
+				<td>
+					<img src="images/dragon-alpha-0.05.png" align="middle" width="400px"/>
+					<figcaption>$\alpha$ = 0.05</figcaption>
+				</td>
+				</tr>
+				<tr align="center">
+				<td>
+					<img src="images/dragon-alpha-0.25.png" align="middle" width="400px"/>
+					<figcaption>$\alpha$ = 0.25</figcaption>
+				</td>
+				<td>
+					<img src="images/dragon-alpha-0.5.png" align="middle" width="400px"/>
+					<figcaption>$\alpha$ = 0.5</figcaption>
+				</td>
+				</tr>
+			</table>
+		</div>
+
+        <br>
+        <p><b>
+            Rendering of `CBbunny_microfacet_cu.dae` using cosine hemisphere sampling and importance sampling. 
+        </b></p>
+        <div align="middle">
+			<table style="width:100%">
+				<tr align="center">
+				<td>
+					<img src="images/bunny-hemisphere.png" align="middle" width="400px"/>
+					<figcaption> Cosine Hemisphere Sampling</figcaption>
+				</td>
+				<td>
+					<img src="images/bunny-importance.png" align="middle" width="400px"/>
+					<figcaption>Importance Sampling</figcaption>
+				</td>
+				</tr>
+			</table>
+		</div>
+        <br>
+        <p><b>
+            Show at least one image with some other conductor material, replacing `eta` and `k`. Note that you should look up values for real data rather than modifying them arbitrarily. Tell us what kind of material your parameters correspond to. 
+        </b></p>
+        <div align="middle">
+			<table style="width:100%">
+				<tr align="center">
+				<td>
+					<img src="images/dragon-alpha-0.5.png" align="middle" width="400px"/>
+					<figcaption> Au (Gold) <br> eta : (0.21646 0.42833 1.3284) <br> k : (3.2390 2.4599 1.8661)</figcaption>
+				</td>
+				<td>
+					<img src="images/dragon-calcium.png" align="middle" width="400px"/>
+					<figcaption> Ca (Calcium) <br> eta : (0.29294 0.28568 0.28733) <br> k : (2.7181 2.3479 1.8333)</figcaption>
+				</td>
+				</tr>
+			</table>
+		</div>
+        <br>
+        
+        
+        
+
+        <h3 align="middle">Part 3. Environment Lightl</h3>
+        <b>Pick one *.exr* file to use for all subparts here. Include a converted *.jpg* of it in your website so we know what map you are using.</b>
+        
+        <p><b>
+            In a few sentences, explain the ideas behind environment lighting (i.e. why we do it/how it works).
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Show the *probability_debug.png* file for the *.exr* file you are using, generated using the `save_probability_debug()` helper function after initializing your probability distributions.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Use the `bunny_unlit.dae` scene and your environment map *.exr* file and render two pictures, one with uniform sampling and one with importance sampling. Use 4 samples per pixel and 64 samples per light in each. Compare noise levels. Make sure to include all screenshots.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Use a different image (if you did part 2, we recommend `bunny_microfacet_cu_unlit.dae`) and your environment map *.exr* file and render two pictures, one with uniform sampling and one with importance sampling. Use 4 samples per pixel and 64 samples per light in each. Compare noise levels. Make sure to include all screenshots.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+
+
+
+        <h3 align="middle">Part 4. Depth of Field</h3>
+        <b>
+            For these subparts, we recommend using a microfacet BSDF scene to show off the cool out of focus effects you can get with depth of field!
+        </b>
+        <p><b>
+            In a few sentences, explain the differences between a pinhole camera model and a thin-lens camera model. 
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Show a "focus stack" where you focus at 4 visibly different depths through a scene. Make sure to include all screenshots.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Show a sequence of 4 pictures with visibly different aperture sizes, all focused at the same point in a scene. Make sure to include all screenshots.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+
+    </div>
+</body>
 </html>
+
