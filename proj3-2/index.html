@@ -68,18 +68,22 @@
 		  </div>
         <br>
         <p>
-            [explain how the new multibounce effects that appear in each image]
+            At ray depth 0, we just see the top light. At ray depth 1, we see the spheres without color, but is reflecting the top light. 
+            At ray depth 2, the scene reflection light appears. At ray depth 3, we can start to see some refraction in the shadows.
+            At ray depth 4, the light reflected off the spheress can also been seen in the reflection of the other sphere. At ray depth 5 and 100,
+            the image is about the same but the color gets brighter.
         </p>
         <br>
         <p>
-            Explain how these bounce numbers relate to the particular effects that appear. Make sure to include all screenshots.
+          In the first bounce, there is no reflection or refraction on the spheres, in the second bounce we can start to see the reflection, but we don't see the light that is bounced between the spheres. In the third bounce, we start to see some refraction in the shadows. After the 4th bounce we start to see the light of the spheres in the reflections.
+
         </p>
         <br>
 
 
         <h3 align="middle">Part 2. Microfacet Material</h3>
         <p><b>
-            Rendering of `CBdragon_microfacet_au.dae` rendered with differnt $\alpha$ 
+            Rendering of `CBdragon_microfacet_au.dae` rendered with differnt $\alpha$ at max ray depth = 7
         </b></p>
         
 		<div align="middle">
@@ -107,6 +111,11 @@
 			</table>
 		</div>
 
+    <p> 
+      As the alpha increases, the dragon looks less glossy and more diffused. In addition, the dragon’s surface looks rougher at higher values of alpha compared to lower values of alpha where the surface is significantly more shiny and polished. 
+
+    </p>
+
         <br>
         <p><b>
             Rendering of `CBbunny_microfacet_cu.dae` using cosine hemisphere sampling and importance sampling. 
@@ -125,6 +134,11 @@
 				</tr>
 			</table>
 		</div>
+
+    <p>
+      The hemisphere sampling has a lot more noise compared to importance sampling.
+
+    </p>
         <br>
         <p><b>
             Show at least one image with some other conductor material, replacing `eta` and `k`. Note that you should look up values for real data rather than modifying them arbitrarily. Tell us what kind of material your parameters correspond to. 
@@ -134,11 +148,11 @@
 				<tr align="center">
 				<td>
 					<img src="images/dragon-alpha-0.5.png" align="middle" width="400px"/>
-					<figcaption> Au (Gold) <br> eta : (0.21646 0.42833 1.3284) <br> k : (3.2390 2.4599 1.8661)</figcaption>
+					<figcaption> Au (Gold) <br> eta : (0.21646 0.42833 1.3284) <br> k : (3.2390 2.4599 1.8661) <br> alpha: 0.5</figcaption>
 				</td>
 				<td>
 					<img src="images/dragon-calcium.png" align="middle" width="400px"/>
-					<figcaption> Ca (Calcium) <br> eta : (0.29294 0.28568 0.28733) <br> k : (2.7181 2.3479 1.8333)</figcaption>
+					<figcaption> Ca (Calcium) <br> eta : (0.29294 0.28568 0.28733) <br> k : (2.7181 2.3479 1.8333) <br> alpha: 0.5</figcaption>
 				</td>
 				</tr>
 			</table>
