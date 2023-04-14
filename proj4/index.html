@@ -333,47 +333,65 @@
 			<figcaption>Pusheen</figcaption>
     </div>
 
-
-    <blockquote><b>
-    Show a screenshot of bump mapping on the cloth and on the sphere.
-    Show a screenshot of displacement mapping on the sphere.
-    Use the same texture for both renders.
-    You can either provide your own texture or use one of the ones in the textures directory,
-    BUT choose one that's not the default <code>texture_2.png</code>.
-    Compare the two approaches and resulting renders in your own words.
-    Compare how your the two shaders react to the sphere by changing the sphere mesh's coarseness by using <code>-o 16 -a 16</code> and then <code>-o 128 -a 128</code>.
-    </b></blockquote>
+		<h3 align="middle"> Blinn-Phong </h3>
+		<p>
+			From the pictures below, I noticed that bump shading produces textures with a slightly bolder color, while displacement shading produces textures that is slightly clearer.
+		</p>
 
     <div align="middle">
       <table style="width:100%">
         <tr align="center">
           <td>
-            <img src="images/t5-bump-mapping-cloth.png" align="middle" width="400vw" />
-            <figcaption>Bump Mapping on the Cloth</figcaption>
+            <img src="images/p5-sphere-bump-16.png" align="middle" width="400px" />
+            <figcaption>Bump Mapping on the Sphere -o 16 -a 16</figcaption>
           </td>
           <td>
-            <img src="images/t5-bump-mapping-sphere.png" align="middle" width="400vw" />
-            <figcaption>Bump Mapping on the Sphere</figcaption>
+            <img src="images/p5-sphere-disp-16.png" align="middle" width="400px" />
+            <figcaption>Displacement Mapping on the Sphere -o 16 -a 16</figcaption>
           </td>
           <td>
         </tr>
-        <tr align="center">
+				<tr align="center">
           <td>
-            <img src="images/t5-displacement-mapping-sphere.png" align="middle" width="400vw" />
-            <figcaption>Displacement Mapping on the Sphere</figcaption>
+            <img src="images/p5-sphere-bump-128.png" align="middle" width="400px" />
+            <figcaption>Bump Mapping on the Sphere -o 128 -a 128</figcaption>
           </td>
           <td>
-            <img src="images/t5-displacement-mapping-sphere-2.png" align="middle" width="400vw" />
-            <figcaption>Displacement Mapping on the Sphere (coarser mesh)</figcaption>
+            <img src="images/p5-sphere-disp-128.png" align="middle" width="400px" />
+            <figcaption>Displacement Mapping on the Sphere -o 128 -a 128</figcaption>
+          </td>
+          <td>
+        </tr>
+
+				<tr align="center">
+          <td>
+            <img src="images/p5-cloth-bump-16.png" align="middle" width="400px" />
+            <figcaption>Bump Mapping on the Cloth -o 16 -a 16</figcaption>
+          </td>
+          <td>
+            <img src="images/p5-cloth-disp-16.png" align="middle" width="400px" />
+            <figcaption>Displacement Mapping on the Cloth -o 16 -a 16</figcaption>
+          </td>
+          <td>
+        </tr>
+				<tr align="center">
+          <td>
+            <img src="images/p5-cloth-bump-128.png" align="middle" width="400px" />
+            <figcaption>Bump Mapping on the Cloth -o 128 -a 128</figcaption>
+          </td>
+          <td>
+            <img src="images/p5-cloth-disp-128.png" align="middle" width="400px" />
+            <figcaption>Displacement Mapping on the Cloth -o 128 -a 128</figcaption>
           </td>
           <td>
         </tr>
       </table>
     </div>
 
-    <p>
-      TODO
-    </p>
+		<p>
+			The higher -o -a values pased in adds more shiniess to the sphere, it is really hard to notice a difference that the coarsness levels make on the textures from bump and displacement shading.
+Additionally, we can see that the coarsness affects how the cloth hangs over the sphere.
+		</p>
 
 
     <h3 align="middle"> Mirror Shading </h3>
